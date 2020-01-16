@@ -9,9 +9,20 @@ state = {
   friendsData : friendsData,
   score: '',
   topScore: '',
-  
+
+}
+
+componentDidMount() {
+  this.setState({
+    friendsData: this.shuffleFriends(this.state.friendsData)
+  })
 }
   
+shuffleFriends = friendsData => {
+  const shuffledFriendsList = friendsData.sort(() => (0.5 - Math.random()));
+  return shuffledFriendsList;
+}
+
   
 
   render () {
