@@ -7,9 +7,9 @@ const GameBoard = (props) => {
   let teamCards = props.teamData.map(team => {
     return (
       <Col  sm="4" >
-        <Card  id={team.id} style={{justifyContent: 'center',alignItems: 'center', width: '18rem' }}>
+        <Card onClick={() => props.handleClick(team.id)}  id={team.id} style={{justifyContent: 'center',alignItems: 'center', width: '18rem' }}>
           <Card.Body>
-            <img height="200px" width="auto" position="center" src={team.image} />
+            <img alt="team" height="200px" width="auto" position="center" src={team.image} />
           </Card.Body>
         </Card>
       </Col>

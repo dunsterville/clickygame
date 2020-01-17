@@ -7,34 +7,66 @@ class App extends Component {
   
 state = {
   teamData : teamData,
-  score: '',
-  topScore: ''
+  score: 0,
+  topScore: 0
 }
 
 componentDidMount() {
   this.setState({
-    friendsData: this.shuffleFriends(this.state.teamData)
+    teamData: this.shuffleTeams(this.state.teamData)
   })
 }
   
-shuffleFriends = teamData => {
-  const shuffledFriendsList = teamData.sort(() => (0.5 - Math.random()));
-  return shuffledFriendsList;
+shuffleTeams = teamData => {
+  const shuffledTeamsList = teamData.sort(() => (0.5 - Math.random()));
+  return shuffledTeamsList;
+}
+
+handleAlreadyGuessed = newTeamList => {
+  
+  const resetTeamList = newTeamList.map(team => {
+    team.clicked = false
+    return team
+  })
+
+  this.setState({
+    teamData: this.shuffleTeams(resetTeamList),
+    score: 0
+  })
+}
+
+handleNotGuessed = newTeamList => {
+  const {score, topScore} = this.state
+ 
+  const newScore = score + 1
+
+  const newtopScore = (newScore > topScore) ? newScore: topScore
+
+  this.setState({
+    teamData : this.shuffleTeams(newTeamList),
+    score: newScore,
+    topScore: newtopScore
+
+  })
 }
 
 handleClick = id => {
+
   let alreadyGuessed = false
-  let newFriendList = this.teamData.map(team => {
+  let newTeamList = this.state.teamData.map(team => {
     if (team.id === id) {
+      console.log(team.id)
       if(!team.clicked){
         team.clicked = true
+        alreadyGuessed = true
       }
-    }
-    return team
+    } 
+return team
   })
+  (alreadyGuessed) ? (() => this.handleAlreadyGuessed(newTeamList))  : (() => this.handleNotGuessed(newTeamList))
+
 }
   
-
   render () {
     return(
     <div>
