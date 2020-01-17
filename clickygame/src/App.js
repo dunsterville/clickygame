@@ -9,7 +9,6 @@ state = {
   teamData : teamData,
   score: '',
   topScore: '',
-
 }
 
 componentDidMount() {
@@ -23,12 +22,15 @@ shuffleFriends = teamData => {
   return shuffledFriendsList;
 }
 
+handleClick = event => {
+  console.log(event.target.id)
+}
   
 
   render () {
     return(
     <div>
-    <Jumbotron1/>
+    <Jumbotron1 score={this.state.score} topScore={this.state.score}/>
     <GameBoard teamData = {this.state.teamData}
     />
     

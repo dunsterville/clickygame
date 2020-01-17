@@ -2,7 +2,7 @@ import React from 'react'
 import {Jumbotron, Container} from 'react-bootstrap'
 
 
-const Jumbotron1 = _ => {
+const Jumbotron1 = (props) => {
   return (
 <Jumbotron fluid>
   <Container>
@@ -13,7 +13,7 @@ const Jumbotron1 = _ => {
     </h5>
     <br/>
     <h3>
-      Score: 0 | Top Score: 0
+      Score: {score} | Top Score: {topScore}
     </h3>
   </Container>
 </Jumbotron>
