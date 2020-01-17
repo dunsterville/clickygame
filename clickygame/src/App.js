@@ -8,7 +8,7 @@ class App extends Component {
 state = {
   teamData : teamData,
   score: '',
-  topScore: '',
+  topScore: ''
 }
 
 componentDidMount() {
@@ -23,16 +23,15 @@ shuffleFriends = teamData => {
 }
 
 handleClick = event => {
-  console.log(event.target.id)
+  let newFriendList = 
 }
   
 
   render () {
     return(
     <div>
-    <Jumbotron1 score={this.state.score} topScore={this.state.score}/>
-    <GameBoard teamData = {this.state.teamData}
-    />
+    <Jumbotron1 score={this.state.score} topScore={this.state.topScore}/>
+    <GameBoard teamData={this.state.teamData} handleClick={this.handleClick} />
     
   </div>
     )

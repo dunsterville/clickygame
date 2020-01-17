@@ -13,7 +13,7 @@ const Jumbotron1 = (props) => {
     </h5>
     <br/>
     <h3>
-      Score: {score} | Top Score: {topScore}
+      Score: {props.score} | Top Score: {props.topScore}
     </h3>
   </Container>
 </Jumbotron>
