@@ -53,17 +53,19 @@ handleNotGuessed = newTeamList => {
 handleClick = id => {
 
   let alreadyGuessed = false
+  console.log(this.state.teamData)
   let newTeamList = this.state.teamData.map(team => {
     if (team.id === id) {
       console.log(team.id)
       if(!team.clicked){
         team.clicked = true
         alreadyGuessed = true
-      }
+      } 
     } 
-return team
+    return team
   })
-  (alreadyGuessed) ? (() => this.handleAlreadyGuessed(newTeamList))  : (() => this.handleNotGuessed(newTeamList))
+
+  alreadyGuessed ? this.handleNotGuessed(newTeamList) : this.handleAlreadyGuessed(newTeamList)
 
 }
   
