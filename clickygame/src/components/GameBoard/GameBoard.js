@@ -4,7 +4,7 @@ import { Row, Container, Col } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 
 const GameBoard = (props) => {
-  let teamCards = props.friendsData.map(team => {
+  let teamCards = props.teamData.map(team => {
     return (
       <Col sm="4">
         <Card style={{ width: '18rem' }}>

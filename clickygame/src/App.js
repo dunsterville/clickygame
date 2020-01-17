@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Jumbotron1 from './components/Jumbotron1'
 import GameBoard from './components/GameBoard'
-import friendsData from './data/friendsData.json'
+import teamData from './data/teamData.json'
 
 class App extends Component {
   
 state = {
-  friendsData : friendsData,
+  teamData : teamData,
   score: '',
   topScore: '',
 
@@ -14,12 +14,12 @@ state = {
 
 componentDidMount() {
   this.setState({
-    friendsData: this.shuffleFriends(this.state.friendsData)
+    friendsData: this.shuffleFriends(this.state.teamData)
   })
 }
   
-shuffleFriends = friendsData => {
-  const shuffledFriendsList = friendsData.sort(() => (0.5 - Math.random()));
+shuffleFriends = teamData => {
+  const shuffledFriendsList = teamData.sort(() => (0.5 - Math.random()));
   return shuffledFriendsList;
 }
 
@@ -29,7 +29,7 @@ shuffleFriends = friendsData => {
     return(
     <div>
     <Jumbotron1/>
-    <GameBoard friendsData = {this.state.friendsData}
+    <GameBoard teamData = {this.state.teamData}
     />
     
   </div>
