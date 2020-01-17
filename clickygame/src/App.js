@@ -22,8 +22,16 @@ shuffleFriends = teamData => {
   return shuffledFriendsList;
 }
 
-handleClick = event => {
-  let newFriendList = 
+handleClick = id => {
+  let alreadyGuessed = false
+  let newFriendList = this.teamData.map(team => {
+    if (team.id === id) {
+      if(!team.clicked){
+        team.clicked = true
+      }
+    }
+    return team
+  })
 }
   
 
