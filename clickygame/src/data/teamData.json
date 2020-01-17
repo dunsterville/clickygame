@@ -1,0 +1,45 @@
+[{
+    "id": "bengals",
+    "image" : "./assets/img/bengals.jpeg",
+    "clicked" : false
+},
+{
+    "id": "broncos",
+    "image" : "./assets/img/broncos.jpeg",
+    "clicked" : false
+},
+{
+    "id": "cowboys",
+    "image" : "./assets/img/cowboys.png",
+    "clicked" : false
+},
+{
+    "id": "dolphins",
+    "image" : "./assets/img/dolphins.png",
+    "clicked" : false
+},
+{
+    "id": "raiders",
+    "image" : "./assets/img/raiders.png",
+    "clicked" : false
+},
+{
+    "id": "rams",
+    "image" : "./assets/img/rams.png",
+    "clicked" : false
+},
+{
+    "id": "saints",
+    "image" : "./assets/img/saints.png",
+    "clicked" : false
+},
+{
+    "id": "texans",
+    "image" : "./assets/img/texans.png",
+    "clicked" : false
+},
+{
+    "id": "vikings",
+    "image" : "./assets/img/vikings.png",
+    "clicked" : false
+}]
